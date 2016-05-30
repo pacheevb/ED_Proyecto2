@@ -17,6 +17,10 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+private slots:
+   void on_btn_cerveceria_clicked();
+   void on_btn_aerolinea_clicked();
 };
 
 #endif // MAINWINDOW_H

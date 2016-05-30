@@ -15,6 +15,13 @@ public:
     explicit principalCervezas(QWidget *parent = 0);
     ~principalCervezas();
 
+private slots:
+    void on_btn_registroFamilia_clicked();
+
+    void on_btn_registroCerveza_clicked();
+
+    void on_btn_buscarCerveza_clicked();
+
 private:
     Ui::principalCervezas *ui;
 };

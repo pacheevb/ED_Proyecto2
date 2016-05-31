@@ -22,6 +22,8 @@ private slots:
 
     void on_btn_buscarCerveza_clicked();
 
+    void on_btn_registroEstilo_clicked();
+
 private:
     Ui::principalCervezas *ui;
 };

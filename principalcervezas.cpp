@@ -2,6 +2,7 @@
 #include "ui_principalcervezas.h"
 #include "registrofamilia.h"
 #include "registrocerveza.h"
+#include "registroestilo.h"
 #include "buscarcerveza.h"
 
 
@@ -43,5 +44,14 @@ void principalCervezas::on_btn_buscarCerveza_clicked()
     bC.setModal(true);
     this->close();
     bC.exec();
+
+}
+
+void principalCervezas::on_btn_registroEstilo_clicked()
+{
+    registroEstilo rE;
+    rE.setModal(true);
+    this->close();
+    rE.exec();
 
 }

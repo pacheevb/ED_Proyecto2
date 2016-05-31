@@ -33,6 +33,18 @@ public:
         if (principalCervezas->objectName().isEmpty())
             principalCervezas->setObjectName(QStringLiteral("principalCervezas"));
         principalCervezas->resize(293, 352);
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        QBrush brush1(QColor(31, 37, 49, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        principalCervezas->setPalette(palette);
         btn_registroFamilia = new QPushButton(principalCervezas);
         btn_registroFamilia->setObjectName(QStringLiteral("btn_registroFamilia"));
         btn_registroFamilia->setGeometry(QRect(60, 120, 171, 51));
@@ -44,7 +56,9 @@ public:
         btn_buscarCerveza->setGeometry(QRect(60, 260, 171, 51));
         label = new QLabel(principalCervezas);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(130, 50, 47, 13));
+        label->setGeometry(QRect(40, 20, 210, 71));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/lb_menu.png")));
+        label->setScaledContents(true);
 
         retranslateUi(principalCervezas);
 
@@ -57,7 +71,7 @@ public:
         btn_registroFamilia->setText(QApplication::translate("principalCervezas", "Registro Familia", 0));
         btn_registroCerveza->setText(QApplication::translate("principalCervezas", "Registro Cerveza", 0));
         btn_buscarCerveza->setText(QApplication::translate("principalCervezas", "Buscar Cerveza", 0));
-        label->setText(QApplication::translate("principalCervezas", "Men\303\272:", 0));
+        label->setText(QString());
     } // retranslateUi
 
 };

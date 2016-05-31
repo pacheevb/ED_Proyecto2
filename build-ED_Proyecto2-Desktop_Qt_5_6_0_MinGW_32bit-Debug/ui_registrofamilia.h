@@ -34,6 +34,7 @@ public:
         registroFamilia->resize(250, 200);
         label = new QLabel(registroFamilia);
         label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(70, 60, 94, 13));
         label_2 = new QLabel(registroFamilia);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(20, 130, 51, 16));

@@ -15,6 +15,9 @@ public:
     explicit ciudadesAerolinea(QWidget *parent = 0);
     ~ciudadesAerolinea();
 
+private slots:
+    void on_btn_SeguirAMatriz_clicked();
+
 private:
     Ui::ciudadesAerolinea *ui;
 };

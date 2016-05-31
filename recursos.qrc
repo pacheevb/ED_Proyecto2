@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>Recursos/Rutas.png</file>
         <file>Recursos/cervezas.png</file>
+        <file>Recursos/lb_menu.png</file>
+        <file>Recursos/lb_regCervezas.png</file>
     </qresource>
 </RCC>

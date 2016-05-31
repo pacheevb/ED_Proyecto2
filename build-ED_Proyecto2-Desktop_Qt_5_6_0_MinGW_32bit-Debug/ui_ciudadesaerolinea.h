@@ -26,7 +26,7 @@ class Ui_ciudadesAerolinea
 public:
     QLabel *label;
     QSpinBox *spinBox;
-    QPushButton *pushButton;
+    QPushButton *btn_SeguirAMatriz;
 
     void setupUi(QDialog *ciudadesAerolinea)
     {
@@ -39,9 +39,9 @@ public:
         spinBox = new QSpinBox(ciudadesAerolinea);
         spinBox->setObjectName(QStringLiteral("spinBox"));
         spinBox->setGeometry(QRect(80, 90, 42, 22));
-        pushButton = new QPushButton(ciudadesAerolinea);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(60, 170, 75, 23));
+        btn_SeguirAMatriz = new QPushButton(ciudadesAerolinea);
+        btn_SeguirAMatriz->setObjectName(QStringLiteral("btn_SeguirAMatriz"));
+        btn_SeguirAMatriz->setGeometry(QRect(60, 170, 75, 23));
 
         retranslateUi(ciudadesAerolinea);
 
@@ -52,7 +52,7 @@ public:
     {
         ciudadesAerolinea->setWindowTitle(QApplication::translate("ciudadesAerolinea", "Dialog", 0));
         label->setText(QApplication::translate("ciudadesAerolinea", "Cantidad de ciudades:", 0));
-        pushButton->setText(QApplication::translate("ciudadesAerolinea", "Seguir", 0));
+        btn_SeguirAMatriz->setText(QApplication::translate("ciudadesAerolinea", "Seguir", 0));
     } // retranslateUi
 
 };

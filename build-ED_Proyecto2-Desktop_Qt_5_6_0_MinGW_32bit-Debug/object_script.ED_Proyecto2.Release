@@ -6,7 +6,6 @@ INPUT(
 ./release\registrofamilia.o
 ./release\registroestilo.o
 ./release\buscarcerveza.o
-./release\ciudadesaerolinea.o
 ./release\matrizaerolinea.o
 ./release\resultadoruta.o
 ./release\qrc_recursos.o
@@ -16,7 +15,6 @@ INPUT(
 ./release\moc_registrofamilia.o
 ./release\moc_registroestilo.o
 ./release\moc_buscarcerveza.o
-./release\moc_ciudadesaerolinea.o
 ./release\moc_matrizaerolinea.o
 ./release\moc_resultadoruta.o
 );

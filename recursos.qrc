@@ -4,5 +4,20 @@
         <file>Recursos/cervezas.png</file>
         <file>Recursos/lb_menu.png</file>
         <file>Recursos/lb_regCervezas.png</file>
+        <file>Recursos/btn_aerolinea.png</file>
+        <file>Recursos/btn_buscarCerveza.png</file>
+        <file>Recursos/btn_cerveceria.png</file>
+        <file>Recursos/btn_regCerveza.png</file>
+        <file>Recursos/btn_regEstilo.png</file>
+        <file>Recursos/btn_regFamilia.png</file>
+        <file>Recursos/lb_regEstilo.png</file>
+        <file>Recursos/lb_regFamilia.png</file>
+        <file>Recursos/lb_buscarCervezas.png</file>
+        <file>Recursos/lb_matriz.png</file>
+        <file>Recursos/btn_guardar.png</file>
+        <file>Recursos/btn_dijkstra.png</file>
+        <file>Recursos/btn_floyd.png</file>
+        <file>Recursos/btn_kuskal.png</file>
+        <file>Recursos/btn_prim.png</file>
     </qresource>
 </RCC>

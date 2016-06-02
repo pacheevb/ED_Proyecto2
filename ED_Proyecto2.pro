@@ -19,7 +19,6 @@ SOURCES += main.cpp\
     registrofamilia.cpp \
     registroestilo.cpp \
     buscarcerveza.cpp \
-    ciudadesaerolinea.cpp \
     matrizaerolinea.cpp \
     resultadoruta.cpp
 
@@ -29,7 +28,6 @@ HEADERS  += mainwindow.h \
     registrofamilia.h \
     registroestilo.h \
     buscarcerveza.h \
-    ciudadesaerolinea.h \
     matrizaerolinea.h \
     resultadoruta.h
 
@@ -39,7 +37,6 @@ FORMS    += mainwindow.ui \
     registrofamilia.ui \
     registroestilo.ui \
     buscarcerveza.ui \
-    ciudadesaerolinea.ui \
     matrizaerolinea.ui \
     resultadoruta.ui
 

@@ -36,18 +36,39 @@ public:
         if (buscarCerveza->objectName().isEmpty())
             buscarCerveza->setObjectName(QStringLiteral("buscarCerveza"));
         buscarCerveza->resize(500, 432);
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        QBrush brush1(QColor(31, 37, 49, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        buscarCerveza->setPalette(palette);
         label = new QLabel(buscarCerveza);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(30, 20, 91, 16));
+        label->setGeometry(QRect(100, 20, 311, 31));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/lb_buscarCervezas.png")));
+        label->setScaledContents(true);
         listView = new QListView(buscarCerveza);
         listView->setObjectName(QStringLiteral("listView"));
-        listView->setGeometry(QRect(30, 140, 291, 261));
+        listView->setGeometry(QRect(20, 150, 291, 261));
         comboBox = new QComboBox(buscarCerveza);
         comboBox->setObjectName(QStringLiteral("comboBox"));
         comboBox->setGeometry(QRect(90, 80, 69, 22));
         label_2 = new QLabel(buscarCerveza);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(30, 80, 51, 16));
+        QPalette palette1;
+        palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        QBrush brush2(QColor(120, 120, 120, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette1.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
+        label_2->setPalette(palette1);
         pushButton = new QPushButton(buscarCerveza);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(210, 80, 75, 23));
@@ -60,7 +81,7 @@ public:
     void retranslateUi(QDialog *buscarCerveza)
     {
         buscarCerveza->setWindowTitle(QApplication::translate("buscarCerveza", "Dialog", 0));
-        label->setText(QApplication::translate("buscarCerveza", "Buscar Cervezas:", 0));
+        label->setText(QString());
         label_2->setText(QApplication::translate("buscarCerveza", "Familia:", 0));
         pushButton->setText(QApplication::translate("buscarCerveza", "Buscar", 0));
     } // retranslateUi

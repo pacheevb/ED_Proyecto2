@@ -87,7 +87,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>Registro Familia</string>
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_registroCerveza">
@@ -100,7 +103,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>Registro Cerveza</string>
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_buscarCerveza">
@@ -113,7 +119,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>Buscar Cerveza</string>
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -145,9 +154,88 @@
     </rect>
    </property>
    <property name="text">
-    <string>Registro Estilo</string>
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>52</x>
+     <y>107</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="recursos.qrc">:/Recursos/btn_regFamilia.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>53</x>
+     <y>309</y>
+     <width>190</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="recursos.qrc">:/Recursos/btn_buscarCerveza.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>53</x>
+     <y>174</y>
+     <width>190</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="recursos.qrc">:/Recursos/btn_regCerveza.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>53</x>
+     <y>241</y>
+     <width>190</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="recursos.qrc">:/Recursos/btn_regEstilo.png</pixmap>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
+  <zorder>btn_registroFamilia</zorder>
+  <zorder>btn_buscarCerveza</zorder>
+  <zorder>btn_registroCerveza</zorder>
+  <zorder>btn_registroEstilo</zorder>
  </widget>
  <resources>
   <include location="recursos.qrc"/>

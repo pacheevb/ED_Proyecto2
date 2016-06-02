@@ -6,7 +6,6 @@ INPUT(
 ./debug\registrofamilia.o
 ./debug\registroestilo.o
 ./debug\buscarcerveza.o
-./debug\ciudadesaerolinea.o
 ./debug\matrizaerolinea.o
 ./debug\resultadoruta.o
 ./debug\qrc_recursos.o
@@ -16,7 +15,6 @@ INPUT(
 ./debug\moc_registrofamilia.o
 ./debug\moc_registroestilo.o
 ./debug\moc_buscarcerveza.o
-./debug\moc_ciudadesaerolinea.o
 ./debug\moc_matrizaerolinea.o
 ./debug\moc_resultadoruta.o
 );

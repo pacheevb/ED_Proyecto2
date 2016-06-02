@@ -41,13 +41,14 @@ public:
     QComboBox *comboBox;
     QComboBox *comboBox_2;
     QTextEdit *textEdit;
-    QPushButton *pushButton;
+    QPushButton *btn_guardarCerveza;
     QSpinBox *spinBox;
     QSpinBox *spinBox_2;
     QLabel *label_12;
     QLineEdit *lineEdit_2;
     QLineEdit *lineEdit_4;
     QLineEdit *lineEdit_5;
+    QLabel *label_7;
 
     void setupUi(QDialog *RegistroCerveza)
     {
@@ -71,7 +72,7 @@ public:
         lineEdit->setGeometry(QRect(150, 150, 113, 20));
         label = new QLabel(RegistroCerveza);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(320, 30, 351, 31));
+        label->setGeometry(QRect(310, 30, 361, 31));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
@@ -162,9 +163,10 @@ public:
         textEdit = new QTextEdit(RegistroCerveza);
         textEdit->setObjectName(QStringLiteral("textEdit"));
         textEdit->setGeometry(QRect(150, 50, 104, 71));
-        pushButton = new QPushButton(RegistroCerveza);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(570, 400, 75, 23));
+        btn_guardarCerveza = new QPushButton(RegistroCerveza);
+        btn_guardarCerveza->setObjectName(QStringLiteral("btn_guardarCerveza"));
+        btn_guardarCerveza->setGeometry(QRect(570, 380, 91, 41));
+        btn_guardarCerveza->setFlat(true);
         spinBox = new QSpinBox(RegistroCerveza);
         spinBox->setObjectName(QStringLiteral("spinBox"));
         spinBox->setGeometry(QRect(150, 196, 42, 22));
@@ -188,6 +190,32 @@ public:
         lineEdit_5 = new QLineEdit(RegistroCerveza);
         lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
         lineEdit_5->setGeometry(QRect(150, 380, 113, 20));
+        label_7 = new QLabel(RegistroCerveza);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(560, 380, 121, 51));
+        label_7->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/btn_guardar.png")));
+        lineEdit->raise();
+        label->raise();
+        label_2->raise();
+        label_3->raise();
+        label_4->raise();
+        label_5->raise();
+        label_6->raise();
+        label_8->raise();
+        label_9->raise();
+        label_10->raise();
+        label_11->raise();
+        comboBox->raise();
+        comboBox_2->raise();
+        textEdit->raise();
+        spinBox->raise();
+        spinBox_2->raise();
+        label_12->raise();
+        lineEdit_2->raise();
+        lineEdit_4->raise();
+        lineEdit_5->raise();
+        label_7->raise();
+        btn_guardarCerveza->raise();
 
         retranslateUi(RegistroCerveza);
 
@@ -207,8 +235,9 @@ public:
         label_9->setText(QApplication::translate("RegistroCerveza", "Precio:", 0));
         label_10->setText(QApplication::translate("RegistroCerveza", "Familia:", 0));
         label_11->setText(QApplication::translate("RegistroCerveza", "Estilo:", 0));
-        pushButton->setText(QApplication::translate("RegistroCerveza", "Guardar", 0));
+        btn_guardarCerveza->setText(QString());
         label_12->setText(QApplication::translate("RegistroCerveza", "horas", 0));
+        label_7->setText(QString());
     } // retranslateUi
 
 };

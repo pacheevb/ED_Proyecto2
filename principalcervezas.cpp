@@ -23,7 +23,6 @@ void principalCervezas::on_btn_registroFamilia_clicked()
     //ir a registro familia
     registroFamilia rF;
     rF.setModal(true);
-    this->close();
     rF.exec();
 }
 
@@ -32,7 +31,6 @@ void principalCervezas::on_btn_registroCerveza_clicked()
     //ir a registroCerveza
     RegistroCerveza rC;
     rC.setModal(true);
-    this->close();
     rC.exec();
 
 }
@@ -42,7 +40,6 @@ void principalCervezas::on_btn_buscarCerveza_clicked()
     //ir a buscarCerveza
     buscarCerveza bC;
     bC.setModal(true);
-    this->close();
     bC.exec();
 
 }
@@ -51,7 +48,6 @@ void principalCervezas::on_btn_registroEstilo_clicked()
 {
     registroEstilo rE;
     rE.setModal(true);
-    this->close();
     rE.exec();
 
 }

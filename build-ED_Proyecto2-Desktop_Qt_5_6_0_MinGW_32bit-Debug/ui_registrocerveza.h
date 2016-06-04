@@ -124,7 +124,7 @@ public:
         label_6->setPalette(palette6);
         label_8 = new QLabel(RegistroCerveza);
         label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(20, 317, 41, 20));
+        label_8->setGeometry(QRect(20, 340, 41, 20));
         QPalette palette7;
         palette7.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette7.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
@@ -186,7 +186,7 @@ public:
         lineEdit_2->setGeometry(QRect(150, 290, 113, 20));
         lineEdit_4 = new QLineEdit(RegistroCerveza);
         lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
-        lineEdit_4->setGeometry(QRect(150, 340, 113, 20));
+        lineEdit_4->setGeometry(QRect(150, 338, 113, 20));
         lineEdit_5 = new QLineEdit(RegistroCerveza);
         lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
         lineEdit_5->setGeometry(QRect(150, 380, 113, 20));

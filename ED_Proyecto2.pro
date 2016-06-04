@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     registroestilo.cpp \
     buscarcerveza.cpp \
     matrizaerolinea.cpp \
-    resultadoruta.cpp
+    resultadoruta.cpp \
+    agregarciudad.cpp
 
 HEADERS  += mainwindow.h \
     registrocerveza.h \
@@ -29,7 +30,8 @@ HEADERS  += mainwindow.h \
     registroestilo.h \
     buscarcerveza.h \
     matrizaerolinea.h \
-    resultadoruta.h
+    resultadoruta.h \
+    agregarciudad.h
 
 FORMS    += mainwindow.ui \
     registrocerveza.ui \
@@ -38,7 +40,8 @@ FORMS    += mainwindow.ui \
     registroestilo.ui \
     buscarcerveza.ui \
     matrizaerolinea.ui \
-    resultadoruta.ui
+    resultadoruta.ui \
+    agregarciudad.ui
 
 RESOURCES += \
     recursos.qrc

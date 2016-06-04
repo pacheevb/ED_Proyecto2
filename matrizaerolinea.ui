@@ -160,71 +160,11 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>100</y>
-     <width>81</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="palette">
-    <palette>
-     <active>
-      <colorrole role="WindowText">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </active>
-     <inactive>
-      <colorrole role="WindowText">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </inactive>
-     <disabled>
-      <colorrole role="WindowText">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>120</red>
-         <green>120</green>
-         <blue>120</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </disabled>
-    </palette>
-   </property>
-   <property name="text">
-    <string>Nombre ciudad:</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>100</y>
-     <width>113</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btn_agregarCiudad">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>100</y>
+     <x>300</x>
+     <y>450</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -297,9 +237,17 @@
     <pixmap resource="recursos.qrc">:/Recursos/btn_kuskal.png</pixmap>
    </property>
   </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>80</y>
+     <width>611</width>
+     <height>351</height>
+    </rect>
+   </property>
+  </widget>
   <zorder>label</zorder>
-  <zorder>label_2</zorder>
-  <zorder>lineEdit</zorder>
   <zorder>btn_agregarCiudad</zorder>
   <zorder>label_3</zorder>
   <zorder>label_4</zorder>
@@ -309,6 +257,7 @@
   <zorder>btn_floyd</zorder>
   <zorder>btn_dijkstra</zorder>
   <zorder>btn_kruskal</zorder>
+  <zorder>tableWidget</zorder>
  </widget>
  <resources>
   <include location="recursos.qrc"/>

@@ -8,6 +8,7 @@ INPUT(
 ./debug\buscarcerveza.o
 ./debug\matrizaerolinea.o
 ./debug\resultadoruta.o
+./debug\agregarciudad.o
 ./debug\qrc_recursos.o
 ./debug\moc_mainwindow.o
 ./debug\moc_registrocerveza.o
@@ -17,4 +18,5 @@ INPUT(
 ./debug\moc_buscarcerveza.o
 ./debug\moc_matrizaerolinea.o
 ./debug\moc_resultadoruta.o
+./debug\moc_agregarciudad.o
 );

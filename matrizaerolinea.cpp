@@ -1,11 +1,15 @@
 #include "matrizaerolinea.h"
 #include "ui_matrizaerolinea.h"
+#include "agregarciudad.h"
 
 matrizAerolinea::matrizAerolinea(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::matrizAerolinea)
 {
     ui->setupUi(this);
+    setWindowTitle("Matriz");
+    ui->tableWidget->setColumnCount(1); //Cantidad de columnas en la matriz
+    ui->tableWidget->setRowCount(1);
 }
 
 matrizAerolinea::~matrizAerolinea()
@@ -455,4 +459,26 @@ void matrizAerolinea::on_btn_kruskal_clicked()
         return 0;
     }
     */
+}
+
+void matrizAerolinea::on_btn_agregarCiudad_clicked()
+{
+    int resultado;
+    QString nombreCiudad;
+    agregarCiudad aC(this);
+    aC.setWindowTitle("Captura Ciudad");
+    resultado = aC.exec();
+    if (resultado == QDialog::Rejected)
+        return;
+    nombreCiudad = aC.nombre();
+    ui->tableWidget->insertRow(ui->tableWidget->rowCount());//NUEVA FILA
+
+    ui->tableWidget->insertColumn(ui->tableWidget->columnCount());//Nueva Columna
+
+    ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1  , 0 , new QTableWidgetItem(nombreCiudad)); //Agregar elementos a la ultima fila, columa 0 será para el nombre
+    ui->tableWidget->setItem(0 , ui->tableWidget->columnCount() - 1  , new QTableWidgetItem(nombreCiudad));
+
+
+
+
 }

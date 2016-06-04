@@ -16,8 +16,8 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTableWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -29,13 +29,12 @@ public:
     QPushButton *btn_dijkstra;
     QPushButton *btn_prim;
     QPushButton *btn_kruskal;
-    QLabel *label_2;
-    QLineEdit *lineEdit;
     QPushButton *btn_agregarCiudad;
     QLabel *label_3;
     QLabel *label_4;
     QLabel *label_5;
     QLabel *label_6;
+    QTableWidget *tableWidget;
 
     void setupUi(QDialog *matrizAerolinea)
     {
@@ -75,22 +74,9 @@ public:
         btn_kruskal->setObjectName(QStringLiteral("btn_kruskal"));
         btn_kruskal->setGeometry(QRect(690, 440, 75, 41));
         btn_kruskal->setFlat(true);
-        label_2 = new QLabel(matrizAerolinea);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(20, 100, 81, 16));
-        QPalette palette1;
-        palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
-        palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
-        QBrush brush2(QColor(120, 120, 120, 255));
-        brush2.setStyle(Qt::SolidPattern);
-        palette1.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
-        label_2->setPalette(palette1);
-        lineEdit = new QLineEdit(matrizAerolinea);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(100, 100, 113, 20));
         btn_agregarCiudad = new QPushButton(matrizAerolinea);
         btn_agregarCiudad->setObjectName(QStringLiteral("btn_agregarCiudad"));
-        btn_agregarCiudad->setGeometry(QRect(220, 100, 75, 23));
+        btn_agregarCiudad->setGeometry(QRect(300, 450, 75, 23));
         label_3 = new QLabel(matrizAerolinea);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(670, 260, 121, 51));
@@ -107,9 +93,10 @@ public:
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setGeometry(QRect(670, 440, 121, 51));
         label_6->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/btn_kuskal.png")));
+        tableWidget = new QTableWidget(matrizAerolinea);
+        tableWidget->setObjectName(QStringLiteral("tableWidget"));
+        tableWidget->setGeometry(QRect(30, 80, 611, 351));
         label->raise();
-        label_2->raise();
-        lineEdit->raise();
         btn_agregarCiudad->raise();
         label_3->raise();
         label_4->raise();
@@ -119,6 +106,7 @@ public:
         btn_floyd->raise();
         btn_dijkstra->raise();
         btn_kruskal->raise();
+        tableWidget->raise();
 
         retranslateUi(matrizAerolinea);
 
@@ -133,7 +121,6 @@ public:
         btn_dijkstra->setText(QString());
         btn_prim->setText(QString());
         btn_kruskal->setText(QString());
-        label_2->setText(QApplication::translate("matrizAerolinea", "Nombre ciudad:", 0));
         btn_agregarCiudad->setText(QApplication::translate("matrizAerolinea", "Agregar", 0));
         label_3->setText(QString());
         label_4->setText(QString());

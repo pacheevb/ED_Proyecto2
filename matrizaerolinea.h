@@ -24,6 +24,8 @@ private slots:
 
     void on_btn_kruskal_clicked();
 
+    void on_btn_agregarCiudad_clicked();
+
 private:
     Ui::matrizAerolinea *ui;
 };

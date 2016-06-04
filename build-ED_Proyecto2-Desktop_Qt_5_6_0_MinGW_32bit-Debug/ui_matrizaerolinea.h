@@ -97,7 +97,7 @@ public:
         label_6->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/btn_kuskal.png")));
         tableWidget = new QTableWidget(matrizAerolinea);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(20, 70, 621, 361));
+        tableWidget->setGeometry(QRect(20, 70, 131, 61));
         label_2 = new QLabel(matrizAerolinea);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(20, 440, 211, 51));

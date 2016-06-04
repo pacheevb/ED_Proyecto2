@@ -80,7 +80,7 @@ public:
 
     void retranslateUi(QDialog *buscarCerveza)
     {
-        buscarCerveza->setWindowTitle(QApplication::translate("buscarCerveza", "Dialog", 0));
+        buscarCerveza->setWindowTitle(QApplication::translate("buscarCerveza", "Buscar Cerveza", 0));
         label->setText(QString());
         label_2->setText(QApplication::translate("buscarCerveza", "Familia:", 0));
         pushButton->setText(QApplication::translate("buscarCerveza", "Buscar", 0));

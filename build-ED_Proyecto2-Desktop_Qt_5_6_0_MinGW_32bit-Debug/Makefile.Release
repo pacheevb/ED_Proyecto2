@@ -146,6 +146,7 @@ release/qrc_recursos.cpp: ../recursos.qrc \
 		../Recursos/btn_guardar.png \
 		../Recursos/btn_kuskal.png \
 		../Recursos/btn_dijkstra.png \
+		../Recursos/btn_agregarCiudad.png \
 		../Recursos/btn_regCerveza.png \
 		../Recursos/lb_buscarCervezas.png \
 		../Recursos/btn_aerolinea.png \
@@ -153,6 +154,7 @@ release/qrc_recursos.cpp: ../recursos.qrc \
 		../Recursos/btn_buscarCerveza.png \
 		../Recursos/lb_regEstilo.png \
 		../Recursos/btn_prim.png \
+		../Recursos/lb_agregarCiudad.png \
 		../Recursos/lb_regCervezas.png \
 		../Recursos/cervezas.png \
 		../Recursos/btn_regFamilia.png \
@@ -2357,15 +2359,12 @@ release/matrizaerolinea.o: ../matrizaerolinea.cpp ../matrizaerolinea.h \
 		C:/Qt/5.6/mingw49_32/include/QtWidgets/qrubberband.h \
 		C:/Qt/5.6/mingw49_32/include/QtWidgets/QLabel \
 		C:/Qt/5.6/mingw49_32/include/QtWidgets/qlabel.h \
-		C:/Qt/5.6/mingw49_32/include/QtWidgets/QLineEdit \
-		C:/Qt/5.6/mingw49_32/include/QtWidgets/qlineedit.h \
-		C:/Qt/5.6/mingw49_32/include/QtGui/qtextcursor.h \
-		C:/Qt/5.6/mingw49_32/include/QtGui/qtextformat.h \
-		C:/Qt/5.6/mingw49_32/include/QtGui/qpen.h \
-		C:/Qt/5.6/mingw49_32/include/QtGui/qtextoption.h \
 		C:/Qt/5.6/mingw49_32/include/QtWidgets/QPushButton \
 		C:/Qt/5.6/mingw49_32/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.6/mingw49_32/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/QTableWidget \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qtablewidget.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qtableview.h \
 		../agregarciudad.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\matrizaerolinea.o ..\matrizaerolinea.cpp
 
@@ -2616,7 +2615,57 @@ release/agregarciudad.o: ../agregarciudad.cpp ../agregarciudad.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.6/mingw49_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.6/mingw49_32/include/QtGui/qtouchdevice.h \
-		ui_agregarciudad.h
+		ui_agregarciudad.h \
+		C:/Qt/5.6/mingw49_32/include/QtCore/QVariant \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/QAction \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.6/mingw49_32/include/QtGui/qicon.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/QApplication \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.6/mingw49_32/include/QtCore/qeventloop.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.6/mingw49_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.6/mingw49_32/include/QtGui/qinputmethod.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/QDialogButtonBox \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qdialogbuttonbox.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/QFormLayout \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qformlayout.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/QLayout \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qlayout.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qboxlayout.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/QHeaderView \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qframe.h \
+		C:/Qt/5.6/mingw49_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.6/mingw49_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.6/mingw49_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qslider.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qstyle.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/QLabel \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qlabel.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/QLineEdit \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qlineedit.h \
+		C:/Qt/5.6/mingw49_32/include/QtGui/qtextcursor.h \
+		C:/Qt/5.6/mingw49_32/include/QtGui/qtextformat.h \
+		C:/Qt/5.6/mingw49_32/include/QtGui/qpen.h \
+		C:/Qt/5.6/mingw49_32/include/QtGui/qtextoption.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\agregarciudad.o ..\agregarciudad.cpp
 
 release/qrc_recursos.o: release/qrc_recursos.cpp 

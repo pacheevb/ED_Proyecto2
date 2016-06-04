@@ -105,7 +105,7 @@ public:
 
     void retranslateUi(QDialog *principalCervezas)
     {
-        principalCervezas->setWindowTitle(QApplication::translate("principalCervezas", "Dialog", 0));
+        principalCervezas->setWindowTitle(QApplication::translate("principalCervezas", "Men\303\272 Cervezas", 0));
         btn_registroFamilia->setText(QString());
         btn_registroCerveza->setText(QString());
         btn_buscarCerveza->setText(QString());

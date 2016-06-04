@@ -100,7 +100,7 @@
    <property name="geometry">
     <rect>
      <x>690</x>
-     <y>260</y>
+     <y>140</y>
      <width>75</width>
      <height>41</height>
     </rect>
@@ -116,7 +116,7 @@
    <property name="geometry">
     <rect>
      <x>690</x>
-     <y>320</y>
+     <y>200</y>
      <width>75</width>
      <height>41</height>
     </rect>
@@ -132,7 +132,7 @@
    <property name="geometry">
     <rect>
      <x>690</x>
-     <y>380</y>
+     <y>260</y>
      <width>75</width>
      <height>41</height>
     </rect>
@@ -148,7 +148,7 @@
    <property name="geometry">
     <rect>
      <x>690</x>
-     <y>440</y>
+     <y>320</y>
      <width>75</width>
      <height>41</height>
     </rect>
@@ -163,21 +163,24 @@
   <widget class="QPushButton" name="btn_agregarCiudad">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>450</y>
-     <width>75</width>
-     <height>23</height>
+     <x>30</x>
+     <y>440</y>
+     <width>181</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Agregar</string>
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
      <x>670</x>
-     <y>260</y>
+     <y>140</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -193,7 +196,7 @@
    <property name="geometry">
     <rect>
      <x>670</x>
-     <y>320</y>
+     <y>200</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -209,7 +212,7 @@
    <property name="geometry">
     <rect>
      <x>670</x>
-     <y>380</y>
+     <y>260</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -225,7 +228,7 @@
    <property name="geometry">
     <rect>
      <x>670</x>
-     <y>440</y>
+     <y>320</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -240,15 +243,30 @@
   <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>80</y>
-     <width>611</width>
-     <height>351</height>
+     <x>20</x>
+     <y>70</y>
+     <width>621</width>
+     <height>361</height>
     </rect>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>440</y>
+     <width>211</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="recursos.qrc">:/Recursos/btn_agregarCiudad.png</pixmap>
+   </property>
+  </widget>
   <zorder>label</zorder>
-  <zorder>btn_agregarCiudad</zorder>
   <zorder>label_3</zorder>
   <zorder>label_4</zorder>
   <zorder>label_5</zorder>
@@ -258,6 +276,8 @@
   <zorder>btn_dijkstra</zorder>
   <zorder>btn_kruskal</zorder>
   <zorder>tableWidget</zorder>
+  <zorder>label_2</zorder>
+  <zorder>btn_agregarCiudad</zorder>
  </widget>
  <resources>
   <include location="recursos.qrc"/>

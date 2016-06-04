@@ -19,5 +19,7 @@
         <file>Recursos/btn_floyd.png</file>
         <file>Recursos/btn_kuskal.png</file>
         <file>Recursos/btn_prim.png</file>
+        <file>Recursos/btn_agregarCiudad.png</file>
+        <file>Recursos/lb_agregarCiudad.png</file>
     </qresource>
 </RCC>

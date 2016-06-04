@@ -75,7 +75,7 @@
    </palette>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Menú Cervezas</string>
   </property>
   <widget class="QPushButton" name="btn_registroFamilia">
    <property name="geometry">

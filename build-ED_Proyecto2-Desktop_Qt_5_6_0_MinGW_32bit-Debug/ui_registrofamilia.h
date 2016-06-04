@@ -14,10 +14,12 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -25,16 +27,18 @@ class Ui_registroFamilia
 {
 public:
     QLabel *label;
-    QLabel *label_2;
-    QLineEdit *lineEdit;
     QPushButton *btn_guardarFam;
     QLabel *label_3;
+    QWidget *widget;
+    QFormLayout *formLayout;
+    QLabel *label_2;
+    QLineEdit *lineEdit;
 
     void setupUi(QDialog *registroFamilia)
     {
         if (registroFamilia->objectName().isEmpty())
             registroFamilia->setObjectName(QStringLiteral("registroFamilia"));
-        registroFamilia->resize(382, 265);
+        registroFamilia->resize(382, 217);
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -52,9 +56,22 @@ public:
         label->setGeometry(QRect(29, 30, 321, 31));
         label->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/lb_regFamilia.png")));
         label->setScaledContents(true);
-        label_2 = new QLabel(registroFamilia);
+        btn_guardarFam = new QPushButton(registroFamilia);
+        btn_guardarFam->setObjectName(QStringLiteral("btn_guardarFam"));
+        btn_guardarFam->setGeometry(QRect(270, 160, 91, 41));
+        btn_guardarFam->setFlat(true);
+        label_3 = new QLabel(registroFamilia);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(260, 150, 111, 61));
+        label_3->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/btn_guardar.png")));
+        widget = new QWidget(registroFamilia);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(100, 110, 182, 22));
+        formLayout = new QFormLayout(widget);
+        formLayout->setObjectName(QStringLiteral("formLayout"));
+        formLayout->setContentsMargins(0, 0, 0, 0);
+        label_2 = new QLabel(widget);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(70, 120, 51, 16));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
@@ -62,17 +79,14 @@ public:
         brush2.setStyle(Qt::SolidPattern);
         palette1.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
         label_2->setPalette(palette1);
-        lineEdit = new QLineEdit(registroFamilia);
+
+        formLayout->setWidget(0, QFormLayout::LabelRole, label_2);
+
+        lineEdit = new QLineEdit(widget);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(140, 120, 113, 20));
-        btn_guardarFam = new QPushButton(registroFamilia);
-        btn_guardarFam->setObjectName(QStringLiteral("btn_guardarFam"));
-        btn_guardarFam->setGeometry(QRect(270, 210, 91, 41));
-        btn_guardarFam->setFlat(true);
-        label_3 = new QLabel(registroFamilia);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(260, 200, 111, 61));
-        label_3->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/btn_guardar.png")));
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, lineEdit);
+
         label->raise();
         label_2->raise();
         lineEdit->raise();
@@ -86,11 +100,11 @@ public:
 
     void retranslateUi(QDialog *registroFamilia)
     {
-        registroFamilia->setWindowTitle(QApplication::translate("registroFamilia", "Dialog", 0));
+        registroFamilia->setWindowTitle(QApplication::translate("registroFamilia", "Registro Familia", 0));
         label->setText(QString());
-        label_2->setText(QApplication::translate("registroFamilia", "Nombre:", 0));
         btn_guardarFam->setText(QString());
         label_3->setText(QString());
+        label_2->setText(QApplication::translate("registroFamilia", "Nombre:", 0));
     } // retranslateUi
 
 };

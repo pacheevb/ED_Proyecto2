@@ -15,29 +15,33 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_registroEstilo
 {
 public:
-    QLineEdit *lineEdit;
     QLabel *label;
-    QLabel *label_2;
-    QLabel *label_3;
-    QComboBox *comboBox;
     QPushButton *btn_guardarEstilo;
     QLabel *label_4;
+    QWidget *widget;
+    QFormLayout *formLayout;
+    QLabel *label_2;
+    QLineEdit *lineEdit;
+    QLabel *label_3;
+    QComboBox *comboBox;
 
     void setupUi(QDialog *registroEstilo)
     {
         if (registroEstilo->objectName().isEmpty())
             registroEstilo->setObjectName(QStringLiteral("registroEstilo"));
-        registroEstilo->resize(390, 305);
+        registroEstilo->resize(390, 257);
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -50,17 +54,27 @@ public:
         palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
         palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
         registroEstilo->setPalette(palette);
-        lineEdit = new QLineEdit(registroEstilo);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(160, 120, 113, 20));
         label = new QLabel(registroEstilo);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(40, 30, 311, 31));
         label->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/lb_regEstilo.png")));
         label->setScaledContents(true);
-        label_2 = new QLabel(registroEstilo);
+        btn_guardarEstilo = new QPushButton(registroEstilo);
+        btn_guardarEstilo->setObjectName(QStringLiteral("btn_guardarEstilo"));
+        btn_guardarEstilo->setGeometry(QRect(260, 200, 101, 41));
+        btn_guardarEstilo->setFlat(true);
+        label_4 = new QLabel(registroEstilo);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(260, 200, 121, 51));
+        label_4->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/btn_guardar.png")));
+        widget = new QWidget(registroEstilo);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(100, 120, 182, 48));
+        formLayout = new QFormLayout(widget);
+        formLayout->setObjectName(QStringLiteral("formLayout"));
+        formLayout->setContentsMargins(0, 0, 0, 0);
+        label_2 = new QLabel(widget);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(100, 120, 51, 16));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
@@ -68,25 +82,29 @@ public:
         brush2.setStyle(Qt::SolidPattern);
         palette1.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
         label_2->setPalette(palette1);
-        label_3 = new QLabel(registroEstilo);
+
+        formLayout->setWidget(0, QFormLayout::LabelRole, label_2);
+
+        lineEdit = new QLineEdit(widget);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, lineEdit);
+
+        label_3 = new QLabel(widget);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(100, 160, 47, 13));
         QPalette palette2;
         palette2.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette2.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
         palette2.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
         label_3->setPalette(palette2);
-        comboBox = new QComboBox(registroEstilo);
+
+        formLayout->setWidget(1, QFormLayout::LabelRole, label_3);
+
+        comboBox = new QComboBox(widget);
         comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setGeometry(QRect(160, 160, 111, 22));
-        btn_guardarEstilo = new QPushButton(registroEstilo);
-        btn_guardarEstilo->setObjectName(QStringLiteral("btn_guardarEstilo"));
-        btn_guardarEstilo->setGeometry(QRect(260, 240, 101, 41));
-        btn_guardarEstilo->setFlat(true);
-        label_4 = new QLabel(registroEstilo);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(260, 240, 121, 51));
-        label_4->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/btn_guardar.png")));
+
+        formLayout->setWidget(1, QFormLayout::FieldRole, comboBox);
+
         lineEdit->raise();
         label->raise();
         label_2->raise();
@@ -102,12 +120,12 @@ public:
 
     void retranslateUi(QDialog *registroEstilo)
     {
-        registroEstilo->setWindowTitle(QApplication::translate("registroEstilo", "Dialog", 0));
+        registroEstilo->setWindowTitle(QApplication::translate("registroEstilo", "Registro Estilo", 0));
         label->setText(QString());
-        label_2->setText(QApplication::translate("registroEstilo", "Nombre:", 0));
-        label_3->setText(QApplication::translate("registroEstilo", "Familia:", 0));
         btn_guardarEstilo->setText(QString());
         label_4->setText(QString());
+        label_2->setText(QApplication::translate("registroEstilo", "Nombre:", 0));
+        label_3->setText(QApplication::translate("registroEstilo", "Familia:", 0));
     } // retranslateUi
 
 };

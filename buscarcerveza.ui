@@ -75,7 +75,7 @@
    </palette>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Buscar Cerveza</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">

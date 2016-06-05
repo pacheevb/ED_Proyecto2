@@ -19,6 +19,17 @@ public:
         size++;
     }
 
+    float getPeso(string inicio, string destino){
+        if (existe(inicio) && existe(destino)){
+            float**matriz = crearMatriz();
+            int posicionInicio = getPos(inicio);
+            int posicionFin = getPos(destino);
+            return matriz[posicionInicio][posicionFin];
+        }else{
+            cout << "No hay peso entre esos dos vertices" << endl;
+        }
+    }
+
     void agregarArista(string pVertice, string pDestino, float pPeso){
         if(existe(pVertice) && existe(pDestino)){
             getPos(pVertice);
@@ -108,6 +119,28 @@ public:
         }
         return matriz;
     }
+
+    float** tablaFloyd(){
+            cout << "Tabla Floyd" << endl;
+            float** matriz = crearMatriz();
+            for (int k = 0; k < vertices.getSize(); k++){
+                for (int i = 0; i < vertices.getSize(); i++){
+                    for (int j = 0; j < vertices.getSize(); j++){
+                        float distancia = matriz[i][k] + matriz[k][j];
+                        if (matriz[i][j] > distancia){
+                            matriz[i][j] = distancia;
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < size; i++){
+                for (int j = 0; j < size; j++){
+                    cout << "|" << matriz[i][j];
+                }
+                cout << "|" << endl;
+            }
+            return matriz;
+        }
 
     void mostrarGrafo(){
         vertices.goToStart();

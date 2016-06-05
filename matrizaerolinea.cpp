@@ -54,7 +54,7 @@ void matrizAerolinea::on_btn_floyd_clicked()
 
 void matrizAerolinea::on_btn_dijkstra_clicked()
 {
-
+    mapa.tablaDijkstra();
 }
 
 void matrizAerolinea::on_btn_prim_clicked()

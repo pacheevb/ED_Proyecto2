@@ -121,26 +121,108 @@ public:
     }
 
     float** tablaFloyd(){
-            cout << "Tabla Floyd" << endl;
-            float** matriz = crearMatriz();
-            for (int k = 0; k < vertices.getSize(); k++){
-                for (int i = 0; i < vertices.getSize(); i++){
-                    for (int j = 0; j < vertices.getSize(); j++){
-                        float distancia = matriz[i][k] + matriz[k][j];
-                        if (matriz[i][j] > distancia){
-                            matriz[i][j] = distancia;
-                        }
+        cout << "Tabla Floyd" << endl;
+        float** matriz = crearMatriz();
+        for (int k = 0; k < vertices.getSize(); k++){
+            for (int i = 0; i < vertices.getSize(); i++){
+                for (int j = 0; j < vertices.getSize(); j++){
+                    float distancia = matriz[i][k] + matriz[k][j];
+                    if (matriz[i][j] > distancia){
+                        matriz[i][j] = distancia;
                     }
                 }
             }
-            for (int i = 0; i < size; i++){
-                for (int j = 0; j < size; j++){
-                    cout << "|" << matriz[i][j];
-                }
-                cout << "|" << endl;
-            }
-            return matriz;
         }
+        for (int i = 0; i < size; i++){
+            for (int j = 0; j < size; j++){
+                cout << "|" << matriz[i][j];
+            }
+            cout << "|" << endl;
+        }
+        return matriz;
+    }
+
+    bool visitadoTodo(bool lista[], int largo){
+        bool visitadoTodo = true;
+        for (int i = 0; i < largo; i++){
+            if (lista[i] == false){
+                visitadoTodo = false;
+                break;
+            }
+        }
+        return visitadoTodo;
+    }
+
+    int printSolution(float dist[], int n){
+        cout << "Vertex  Distance from Source\n" << endl;
+        for (int i = 0; i < vertices.getSize(); i++){
+            cout << i << " : " << dist[i] << endl;
+        }
+    }
+
+    int getMinimoDjikstra(bool visitado[], float pesos[]){
+        int indice = 0;
+        float minimo = 9999;
+        for (int i = 0; i < vertices.getSize(); i++){
+            if (visitado[i] == false && pesos[i] < minimo){
+                indice = i;
+                minimo = pesos[indice];
+            }
+        }
+        return indice;
+    }
+
+    float** Dijkstra(string vertice, float **matriz){
+        float distancias [vertices.getSize()];// lista de distancias
+        bool visitados [vertices.getSize()];// lista de vertices visitados
+
+        int fila = getPos(vertice);
+        vertices.goToPos(fila);
+
+        for (int i = 0; i < vertices.getSize(); i++){
+            distancias[i] = 9999;
+            visitados[i] = false;
+        }
+
+        distancias[fila] = 0;
+
+        for (int i = 0; i < vertices.getSize() - 1; i++){
+            int u = getMinimoDjikstra(visitados, distancias);
+            visitados[u] = true;
+            for (int v = 0; v < vertices.getSize(); v++){
+                if (!visitados[v] && matriz[u][v] != 9999 && distancias[u] != 9999 &&
+                    distancias[u] + matriz[u][v] < distancias[v]){
+                        distancias[v] = distancias[u] + matriz[u][v];
+                }
+            }
+
+        }
+
+        for (int i = 0; i < vertices.getSize(); i++){
+            matriz[fila][i] = distancias[i];
+        }
+
+        return matriz;
+    }
+
+    //ocupa arreglos
+    float** tablaDijkstra(){
+        float** matriz = crearMatriz();
+        for (int i = 0; i < vertices.getSize(); i++){
+            vertices.goToPos(i);
+            string ciudad = vertices.getElement().getNombre();
+            matriz = Dijkstra(ciudad, matriz);
+        }
+
+        cout << "Tabla dijkstra" << endl;
+        for (int i = 0; i < size; i++){
+            for (int j = 0; j < size; j++){
+                cout << "|" << matriz[i][j];
+            }
+            cout << "|" << endl;
+        }
+        return matriz;
+    }
 
     void mostrarGrafo(){
         vertices.goToStart();

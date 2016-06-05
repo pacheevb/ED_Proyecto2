@@ -31,7 +31,12 @@ HEADERS  += mainwindow.h \
     buscarcerveza.h \
     matrizaerolinea.h \
     resultadoruta.h \
-    agregarciudad.h
+    agregarciudad.h \
+    Arista.h \
+    Grafo.h \
+    LinkedList.h \
+    Node.h \
+    Vertice.h
 
 FORMS    += mainwindow.ui \
     registrocerveza.ui \

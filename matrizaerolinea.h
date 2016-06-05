@@ -2,6 +2,8 @@
 #define MATRIZAEROLINEA_H
 
 #include <QDialog>
+#include <QTableWidgetItem>
+#include "Grafo.h"
 
 namespace Ui {
 class matrizAerolinea;
@@ -26,8 +28,12 @@ private slots:
 
     void on_btn_agregarCiudad_clicked();
 
+    void on_tableWidget_itemChanged(QTableWidgetItem *item);
+
 private:
     Ui::matrizAerolinea *ui;
+    Grafo mapa;
+
 };
 
 #endif // MATRIZAEROLINEA_H

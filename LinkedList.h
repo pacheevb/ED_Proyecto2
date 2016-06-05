@@ -1,143 +1,202 @@
-#ifndef LINKEDLIST_H_INCLUDED
-#define LINKEDLIST_H_INCLUDED
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
 #include "Node.h"
 #include <stdexcept>
+#include <iostream>
 using namespace std;
 
 template <typename E>
-class LinkedList{
-private:
-    Node<E>* head;
-    Node<E>* tail;
-    Node<E>* current;
-    int size;
 
-    Node<E>* searchPrevious (Node<E>* pNode){
-        if (current ==head){
-            return NULL;
+class LinkedList
+{
+    private:
+        Node< E> *head;
+        Node< E> *tail;
+        Node< E> *current;
+        int size;
+
+    public:
+        LinkedList()
+        {
+            tail = current = head = new Node<E>();
+            size = 0;
+
+        };
+
+        ~LinkedList()
+        {
+            clear();
+            delete head;
+        };
+
+        void insert (E pElement)
+        {
+            current ->next = new Node< E>( pElement, current ->next);
+
+            if (tail  ==  current)
+            {
+                tail = tail ->next;
+            }
+            size++ ;
         }
-        Node<E> *res=head;
-        while (res->next != current){
-            res=res->next;
+
+        void append ( E pElement)
+        {
+            tail = tail ->next = new Node< E>( pElement);
+            size++ ;
+
         }
-        return res;
-    }
 
-public:
-    LinkedList(){ //constructor
-        head = tail = current = new Node<E>();
-        size=0;
-    }
+        E remove () throw (runtime_error)
+        {
+            if (current ->next == NULL){
+                throw runtime_error ("list is empty");
+            }
+            E result = current -> next ->element;
+            Node<E> *temp =current ->next;
 
-    ~LinkedList(){
-        clear();
-        delete head;
-    }
-
-    void insert(E pElement){
-        current->next =new Node <E> (pElement, current->next);
-        if(current==tail){
-            tail=tail->next;
+            if (current ->next == tail ){
+                tail = current;
+            }
+            current ->next = current ->next ->next;
+            delete temp;
+            size--;
+            return result;
         }
-        size++;
-    }
+            void clear() {
+                current = head;
+                while (head != NULL) {
+                    head = head->next;
+                    delete current;
+                    current = head;
+                }
+                head = tail = current = new Node<E>();
+                size = 0;
+            }
 
-    void append(E pElement){
-        tail->next=new Node<E> (pElement);
-        tail=tail->next;
-        size++;
-    }
 
-    E remove() throw (runtime_error){
-        if (current->next ==NULL){
-            throw runtime_error("No element to remove");
+        E getElement() throw (runtime_error)
+
+        {
+            if (current ->next == NULL ){
+                throw runtime_error ("not Element");
+            }
+            return current ->next ->element;
         }
-        E result = current->next->element;
-        Node<E> *temp = current->next;
-        current->next = current->next->next;
-        if(temp == tail){
-            tail = current;
+        void goToStart()
+        {
+            current = head;
         }
-        delete temp;
-        size--;
-        return result;
-    }
+        void goToEnd()
+        {
+            while (current ->next ->next != NULL)
+            {
+                current  = current ->next;
+            }
 
-    void clear(){
-        current=head;
-        while(head!=NULL){
-            head=head->next;
-            delete current;
-            current=head;
         }
-        head=tail=current=new Node<E>();
-        size=0;
-    }
+        void goToPos(int pPos) throw (runtime_error)
+        {
+            if (pPos < 0 || pPos > size){
 
-    E getElement() throw (runtime_error){
-        if (current->next == NULL) {
-            throw runtime_error("No element to get.");
+                throw runtime_error("out of range");
+
+            }
+            current = head;
+            for(int i = 0; i < pPos; i++ ){
+                current = current ->next;
+            }
+
+
         }
-        return current->next->element;
-    }
 
-    void setElement(E pElement){
-        current->next->element = pElement;
-    }
+        void next() throw(runtime_error)
+        {
+            if (size == 0){
+                throw runtime_error ("list is empty");
+            }
+            if (current ->next == NULL){
 
-    void goToStart() {
-        current = head;
-    }
+                    throw runtime_error ("out of range");
+            }
+            current = current ->next;
 
-    void goToEnd() {
-        current = tail;
-    }
-
-    void goToPos(int nPos) throw(runtime_error) {
-        if ((nPos < 0) || (nPos > size)) {
-            throw runtime_error("Index out of bounds");
         }
-        current = head;
-        for (int i = 0; i < nPos; i++) {
-            current = current->next;
-        }
-    }
+        void previous() throw(runtime_error)
+        {
+            if (size == 0){
+                throw runtime_error ("list is empty");
+            }
+            if (current == head){
+                throw runtime_error ("out of range");
+            }
 
-    void previous() {
-        if (current != head) {
-            current = searchPrevious(current);
-        }
-    }
+            Node<E> *temp;
+            temp = head;
 
-    void next() {
-        if (current != tail) {
-            current = current->next;
-        }
-    }
+            while(temp ->next != current){
+                temp = temp -> next;
+            }
 
-    int getPos() {
-        int pos = 0;
-        Node<E>* temp = head;
-        while (temp != current) {
-            pos++;
-            temp = temp->next;
-        }
-        return pos;
-    }
+            current = temp;
+            temp = NULL;
+            delete temp;
 
-    int getSize() {
-        return size;
-    }
 
-    void mostrarTodo(){
-        cout << "Muestro los elementos(getElement)\n" << endl;
-        for(int i = 0; i < size; i++){
-            goToPos(i);
-            cout << "Valor: <" << i << "> es-> " << getElement() << endl;
         }
-    }
+
+        int getPos()
+
+        {
+            Node< E> *temp ;
+            temp = head;
+            int i = 0;
+            while(temp != current){
+                temp = temp ->next;
+                i++;
+            }
+            delete temp;
+            return i;
+
+        }
+
+        int getSize()
+        {
+            return size;
+        }
+
+        void repre()
+        {
+            if (size == 0){
+                cout<< "( )\n";
+            }
+            Node<E> *temp;
+            temp = head;
+            for(int i  = 0; i < size; i++){
+                if (temp ->next == tail){
+                    if (temp == current){
+                        cout << "{"<< temp ->next ->element <<"}\n";
+                    }
+                    else{
+                        cout << "("<< temp ->next ->element <<")\n";
+                    }
+                }
+                else{
+                    if (temp == current){
+                        cout << "{"<< temp ->next ->element<<"}->";
+                    }
+                    else{
+                        cout << "("<< temp ->next ->element<<")->";
+                    }
+                }
+                temp = temp ->next;
+
+            }
+        }
+
+
+
+
 };
 
-
-
-#endif // LINKEDLIST_H_INCLUDED
+#endif // LINKEDLIST_H

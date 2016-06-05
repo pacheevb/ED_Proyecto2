@@ -8,7 +8,7 @@ matrizAerolinea::matrizAerolinea(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Matriz");
-
+    connect(ui->tableWidget->model(), SIGNAL(dataChanged(const QModelIndex&, const QModelIndex&)), this, SLOT(onDataChanged(const QModelIndex&, const QModelIndex&)));
 }
 
 matrizAerolinea::~matrizAerolinea()
@@ -470,9 +470,13 @@ void matrizAerolinea::on_btn_agregarCiudad_clicked()
     if (resultado == QDialog::Rejected)
         return;
     nombreCiudad = aC.nombre();
-    ui->tableWidget->insertRow(ui->tableWidget->rowCount());//NUEVA FILA
 
+    mapa.agregarVertice(nombreCiudad.toLocal8Bit().constData());
+    mapa.mostrarGrafo();
+
+    ui->tableWidget->insertRow(ui->tableWidget->rowCount());//NUEVA FILA
     ui->tableWidget->insertColumn(ui->tableWidget->columnCount());//Nueva Columna
+
     //Poner ciudad en header
     ui->tableWidget->setHorizontalHeaderItem(ui->tableWidget->columnCount() - 1,  new QTableWidgetItem(nombreCiudad));
     ui->tableWidget->setVerticalHeaderItem(ui->tableWidget->rowCount() - 1, new QTableWidgetItem(nombreCiudad) );
@@ -480,8 +484,15 @@ void matrizAerolinea::on_btn_agregarCiudad_clicked()
     //Poner ciudad en casilla de la matriz (Por si acaso)
     //ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1  , 0 , new QTableWidgetItem(nombreCiudad)); //Agregar elementos a la ultima fila, columa 0 será para el nombre
     //ui->tableWidget->setItem(0 , ui->tableWidget->columnCount() - 1  , new QTableWidgetItem(nombreCiudad));
+}
 
-
-
-
+void matrizAerolinea::on_tableWidget_itemChanged(QTableWidgetItem *item)
+{
+    int peso;
+    string origen, destino;
+    origen = mapa.getVertice(item->row()).getNombre();
+    destino = mapa.getVertice(item->column()).getNombre();
+    peso = item->text().toInt();
+    mapa.agregarArista(origen, destino, peso);
+    mapa.mostrarGrafo();
 }

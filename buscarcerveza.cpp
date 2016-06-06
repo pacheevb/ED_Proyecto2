@@ -34,6 +34,7 @@ void buscarCerveza::on_comboBox_currentIndexChanged(int index)
     Vertice aux = grafoCervezas->getVertice(index);
     string str;
     for(int i = 0; i < aux.getAristas()->getSize(); i++){
+        aux.getAristas()->goToPos(i);
         str = aux.getAristas()->getElement().getDestino();
         QString qs = QString::fromLocal8Bit(str.c_str());
         ui->comboBox_2->addItem(qs);

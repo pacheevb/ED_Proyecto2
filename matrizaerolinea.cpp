@@ -1,6 +1,7 @@
 #include "matrizaerolinea.h"
 #include "ui_matrizaerolinea.h"
 #include "agregarciudad.h"
+#include "resultadoruta.h"
 
 matrizAerolinea::matrizAerolinea(QWidget *parent) :
     QDialog(parent),
@@ -49,12 +50,17 @@ void matrizAerolinea::on_pushButton_clicked()
 
 void matrizAerolinea::on_btn_floyd_clicked()
 {
-    mapa.tablaFloyd();
+    //ir a resultadoRuta
+    resultadoRuta rR(mapa.tablaFloyd(), &mapa);
+    rR.setModal(true);
+    rR.exec();
 }
 
 void matrizAerolinea::on_btn_dijkstra_clicked()
 {
-    mapa.tablaDijkstra();
+    resultadoRuta rR(mapa.tablaDijkstra(), &mapa);
+    rR.setModal(true);
+    rR.exec();
 }
 
 void matrizAerolinea::on_btn_prim_clicked()

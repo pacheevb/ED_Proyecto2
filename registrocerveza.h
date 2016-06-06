@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "Grafo.h"
+#include "Vertice.h"
 
 namespace Ui {
 class RegistroCerveza;
@@ -17,6 +18,11 @@ public:
     ~RegistroCerveza();
 
     void setGrafo(Grafo *pGrafo);
+
+private slots:
+    void on_btn_guardarCerveza_clicked();
+
+    void on_comboBox_currentIndexChanged(int index);
 
 private:
     Ui::RegistroCerveza *ui;

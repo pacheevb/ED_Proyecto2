@@ -58,9 +58,6 @@ public:
                 break;
             }
         }
-//        if(!flag){
-//            cout << "No existe ninguna arista con este destino" << endl;
-//        }
     }
 
     void setTipo(int pTipo){

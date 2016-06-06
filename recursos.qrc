@@ -21,5 +21,6 @@
         <file>Recursos/btn_prim.png</file>
         <file>Recursos/btn_agregarCiudad.png</file>
         <file>Recursos/lb_agregarCiudad.png</file>
+        <file>Recursos/lb_resultado.png</file>
     </qresource>
 </RCC>

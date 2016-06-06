@@ -17,7 +17,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QListView>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
@@ -26,12 +26,13 @@ class Ui_buscarCerveza
 {
 public:
     QLabel *label;
-    QListView *listView;
+    QListWidget *listWidget;
     QComboBox *comboBox;
     QLabel *label_2;
-    QPushButton *pushButton;
+    QPushButton *btn_buscar;
     QComboBox *comboBox_2;
     QLabel *label_3;
+    QLabel *label_4;
 
     void setupUi(QDialog *buscarCerveza)
     {
@@ -55,15 +56,15 @@ public:
         label->setGeometry(QRect(100, 20, 311, 31));
         label->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/lb_buscarCervezas.png")));
         label->setScaledContents(true);
-        listView = new QListView(buscarCerveza);
-        listView->setObjectName(QStringLiteral("listView"));
-        listView->setGeometry(QRect(20, 150, 291, 261));
+        listWidget = new QListWidget(buscarCerveza);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+        listWidget->setGeometry(QRect(180, 120, 291, 291));
         comboBox = new QComboBox(buscarCerveza);
         comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setGeometry(QRect(90, 80, 69, 22));
+        comboBox->setGeometry(QRect(90, 150, 69, 22));
         label_2 = new QLabel(buscarCerveza);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(30, 80, 51, 16));
+        label_2->setGeometry(QRect(30, 150, 51, 16));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
@@ -71,20 +72,34 @@ public:
         brush2.setStyle(Qt::SolidPattern);
         palette1.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
         label_2->setPalette(palette1);
-        pushButton = new QPushButton(buscarCerveza);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(210, 80, 75, 23));
+        btn_buscar = new QPushButton(buscarCerveza);
+        btn_buscar->setObjectName(QStringLiteral("btn_buscar"));
+        btn_buscar->setGeometry(QRect(50, 260, 91, 41));
+        btn_buscar->setFlat(true);
         comboBox_2 = new QComboBox(buscarCerveza);
         comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
-        comboBox_2->setGeometry(QRect(90, 110, 69, 22));
+        comboBox_2->setGeometry(QRect(90, 180, 69, 22));
         label_3 = new QLabel(buscarCerveza);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(30, 110, 51, 16));
+        label_3->setGeometry(QRect(30, 180, 51, 16));
         QPalette palette2;
         palette2.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette2.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
         palette2.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
         label_3->setPalette(palette2);
+        label_4 = new QLabel(buscarCerveza);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(30, 260, 141, 51));
+        label_4->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/btn_buscar.png")));
+        label_4->setScaledContents(false);
+        label->raise();
+        listWidget->raise();
+        comboBox->raise();
+        label_2->raise();
+        comboBox_2->raise();
+        label_3->raise();
+        label_4->raise();
+        btn_buscar->raise();
 
         retranslateUi(buscarCerveza);
 
@@ -96,8 +111,9 @@ public:
         buscarCerveza->setWindowTitle(QApplication::translate("buscarCerveza", "Buscar Cerveza", 0));
         label->setText(QString());
         label_2->setText(QApplication::translate("buscarCerveza", "Familia:", 0));
-        pushButton->setText(QApplication::translate("buscarCerveza", "Buscar", 0));
+        btn_buscar->setText(QString());
         label_3->setText(QApplication::translate("buscarCerveza", "Estilo:", 0));
+        label_4->setText(QString());
     } // retranslateUi
 
 };

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>293</width>
-    <height>413</height>
+    <height>554</height>
    </rect>
   </property>
   <property name="palette">
@@ -97,7 +97,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>190</y>
+     <y>400</y>
      <width>171</width>
      <height>51</height>
     </rect>
@@ -113,9 +113,9 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>320</y>
+     <y>467</y>
      <width>171</width>
-     <height>51</height>
+     <height>50</height>
     </rect>
    </property>
    <property name="text">
@@ -148,7 +148,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>254</y>
+     <y>260</y>
      <width>171</width>
      <height>51</height>
     </rect>
@@ -183,9 +183,9 @@
    <property name="geometry">
     <rect>
      <x>53</x>
-     <y>309</y>
-     <width>190</width>
-     <height>70</height>
+     <y>454</y>
+     <width>191</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="text">
@@ -199,7 +199,7 @@
    <property name="geometry">
     <rect>
      <x>53</x>
-     <y>174</y>
+     <y>384</y>
      <width>190</width>
      <height>70</height>
     </rect>
@@ -215,7 +215,7 @@
    <property name="geometry">
     <rect>
      <x>53</x>
-     <y>241</y>
+     <y>247</y>
      <width>190</width>
      <height>70</height>
     </rect>
@@ -227,6 +227,70 @@
     <pixmap resource="recursos.qrc">:/Recursos/btn_regEstilo.png</pixmap>
    </property>
   </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>52</x>
+     <y>315</y>
+     <width>191</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="recursos.qrc">:/Recursos/btn_borrarEstilo.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>170</y>
+     <width>191</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="recursos.qrc">:/Recursos/btn_borrarFam.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_borrarFamilia">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>190</y>
+     <width>161</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_borrarEstilo">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>330</y>
+     <width>161</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>label_2</zorder>
   <zorder>label_3</zorder>
@@ -236,6 +300,10 @@
   <zorder>btn_buscarCerveza</zorder>
   <zorder>btn_registroCerveza</zorder>
   <zorder>btn_registroEstilo</zorder>
+  <zorder>label_6</zorder>
+  <zorder>label_7</zorder>
+  <zorder>btn_borrarFamilia</zorder>
+  <zorder>btn_borrarEstilo</zorder>
  </widget>
  <resources>
   <include location="recursos.qrc"/>

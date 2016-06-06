@@ -32,12 +32,14 @@ public:
     QLabel *label_3;
     QLabel *label_4;
     QLabel *label_5;
+    QLabel *label_6;
+    QLabel *label_7;
 
     void setupUi(QDialog *principalCervezas)
     {
         if (principalCervezas->objectName().isEmpty())
             principalCervezas->setObjectName(QStringLiteral("principalCervezas"));
-        principalCervezas->resize(293, 413);
+        principalCervezas->resize(293, 554);
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -56,11 +58,11 @@ public:
         btn_registroFamilia->setFlat(true);
         btn_registroCerveza = new QPushButton(principalCervezas);
         btn_registroCerveza->setObjectName(QStringLiteral("btn_registroCerveza"));
-        btn_registroCerveza->setGeometry(QRect(60, 190, 171, 51));
+        btn_registroCerveza->setGeometry(QRect(60, 400, 171, 51));
         btn_registroCerveza->setFlat(true);
         btn_buscarCerveza = new QPushButton(principalCervezas);
         btn_buscarCerveza->setObjectName(QStringLiteral("btn_buscarCerveza"));
-        btn_buscarCerveza->setGeometry(QRect(60, 320, 171, 51));
+        btn_buscarCerveza->setGeometry(QRect(60, 467, 171, 50));
         btn_buscarCerveza->setFlat(true);
         label = new QLabel(principalCervezas);
         label->setObjectName(QStringLiteral("label"));
@@ -69,7 +71,7 @@ public:
         label->setScaledContents(true);
         btn_registroEstilo = new QPushButton(principalCervezas);
         btn_registroEstilo->setObjectName(QStringLiteral("btn_registroEstilo"));
-        btn_registroEstilo->setGeometry(QRect(60, 254, 171, 51));
+        btn_registroEstilo->setGeometry(QRect(60, 260, 171, 51));
         btn_registroEstilo->setFlat(true);
         label_2 = new QLabel(principalCervezas);
         label_2->setObjectName(QStringLiteral("label_2"));
@@ -78,16 +80,24 @@ public:
         label_2->setScaledContents(false);
         label_3 = new QLabel(principalCervezas);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(53, 309, 190, 70));
+        label_3->setGeometry(QRect(53, 454, 191, 71));
         label_3->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/btn_buscarCerveza.png")));
         label_4 = new QLabel(principalCervezas);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(53, 174, 190, 70));
+        label_4->setGeometry(QRect(53, 384, 190, 70));
         label_4->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/btn_regCerveza.png")));
         label_5 = new QLabel(principalCervezas);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(53, 241, 190, 70));
+        label_5->setGeometry(QRect(53, 247, 190, 70));
         label_5->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/btn_regEstilo.png")));
+        label_6 = new QLabel(principalCervezas);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(52, 315, 191, 71));
+        label_6->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/btn_borrarEstilo.png")));
+        label_7 = new QLabel(principalCervezas);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(50, 170, 191, 81));
+        label_7->setPixmap(QPixmap(QString::fromUtf8(":/Recursos/btn_borrarFam.png")));
         label->raise();
         label_2->raise();
         label_3->raise();
@@ -97,6 +107,8 @@ public:
         btn_buscarCerveza->raise();
         btn_registroCerveza->raise();
         btn_registroEstilo->raise();
+        label_6->raise();
+        label_7->raise();
 
         retranslateUi(principalCervezas);
 
@@ -115,6 +127,8 @@ public:
         label_3->setText(QString());
         label_4->setText(QString());
         label_5->setText(QString());
+        label_6->setText(QString());
+        label_7->setText(QString());
     } // retranslateUi
 
 };

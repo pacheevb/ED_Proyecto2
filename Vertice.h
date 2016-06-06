@@ -68,6 +68,10 @@ public:
         }
     }
 
+    string *getDatos(){
+        return datosCerveza;
+    }
+
     void setTipo(int pTipo){
         tipo = pTipo;
     }

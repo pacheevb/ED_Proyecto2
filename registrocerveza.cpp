@@ -54,7 +54,7 @@ void RegistroCerveza::on_btn_guardarCerveza_clicked()
 void RegistroCerveza::on_comboBox_currentIndexChanged(int index)
 {
     ui->comboBox_2->clear();
-    Vertice aux = grafoCervezas->getVertice(index);
+    Vertice aux = grafoCervezas->getVertice(grafoCervezas->getPos(ui->comboBox->currentText().toLocal8Bit().constData()));
     string str;
     for(int i = 0; i < aux.getAristas()->getSize(); i++){
         aux.getAristas()->goToPos(i);

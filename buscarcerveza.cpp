@@ -1,5 +1,6 @@
 #include "buscarcerveza.h"
 #include "ui_buscarcerveza.h"
+#include "mostrarcerveza.h"
 
 buscarCerveza::buscarCerveza(QWidget *parent) :
     QDialog(parent),
@@ -31,7 +32,7 @@ void buscarCerveza::setGrafo(Grafo *pGrafo){
 void buscarCerveza::on_comboBox_currentIndexChanged(int index)
 {
     ui->comboBox_2->clear();
-    Vertice aux = grafoCervezas->getVertice(index);
+    Vertice aux = grafoCervezas->getVertice(grafoCervezas->getPos(ui->comboBox->currentText().toLocal8Bit().constData()));
     string str;
     for(int i = 0; i < aux.getAristas()->getSize(); i++){
         aux.getAristas()->goToPos(i);
@@ -39,4 +40,25 @@ void buscarCerveza::on_comboBox_currentIndexChanged(int index)
         QString qs = QString::fromLocal8Bit(str.c_str());
         ui->comboBox_2->addItem(qs);
     }
+}
+
+void buscarCerveza::on_btn_buscar_clicked()
+{
+    ui->listWidget->clear();
+    string str = ui->comboBox_2->currentText().toLocal8Bit().constData();
+    Vertice aux = grafoCervezas->getVertice(grafoCervezas->getPos(str));
+
+    for(int i = 0; i < aux.getAristas()->getSize(); i++){
+        aux.getAristas()->goToPos(i);
+        string strI = aux.getAristas()->getElement().getDestino();
+        QString str = QString::fromLocal8Bit(strI.c_str());
+        ui->listWidget->addItem(str);
+    }
+}
+
+void buscarCerveza::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
+{
+    mostrarCerveza mC(item->text(), grafoCervezas);
+    mC.setModal(true);
+    mC.exec();
 }

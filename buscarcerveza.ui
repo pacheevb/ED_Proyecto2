@@ -96,7 +96,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QListView" name="listView">
+  <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
      <x>180</x>
@@ -262,7 +262,7 @@
    </property>
   </widget>
   <zorder>label</zorder>
-  <zorder>listView</zorder>
+  <zorder>listWidget</zorder>
   <zorder>comboBox</zorder>
   <zorder>label_2</zorder>
   <zorder>comboBox_2</zorder>

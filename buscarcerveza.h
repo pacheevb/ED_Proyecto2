@@ -2,6 +2,9 @@
 #define BUSCARCERVEZA_H
 
 #include <QDialog>
+#include <QModelIndex>
+#include <QAbstractTableModel>
+#include <QListWidgetItem>
 #include "Grafo.h"
 #include "Vertice.h"
 
@@ -21,6 +24,10 @@ public:
 
 private slots:
     void on_comboBox_currentIndexChanged(int index);
+
+    void on_btn_buscar_clicked();
+
+    void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
 
 private:
     Ui::buscarCerveza *ui;

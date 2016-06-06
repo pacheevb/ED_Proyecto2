@@ -31,6 +31,7 @@ void principalCervezas::on_btn_registroCerveza_clicked()
 {
     //ir a registroCerveza
     RegistroCerveza rC;
+    rC.setGrafo(&grafoCervezas);
     rC.setModal(true);
     rC.exec();
 

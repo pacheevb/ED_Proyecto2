@@ -7,12 +7,19 @@ class Vertice{
 private:
     string nombre;
     LinkedList<Arista> *aristas = new LinkedList<Arista>();
+    int tipo;
 
 public:
     Vertice(){}
     Vertice(string pNombre){
         nombre = pNombre;
     }
+
+    Vertice(string pNombre, int pTipo){
+        nombre = pNombre;
+        tipo = pTipo;
+    }
+
 
     string getNombre(){
         return nombre;
@@ -54,6 +61,14 @@ public:
 //        if(!flag){
 //            cout << "No existe ninguna arista con este destino" << endl;
 //        }
+    }
+
+    void setTipo(int pTipo){
+        tipo = pTipo;
+    }
+
+    int getTipo(){
+        return tipo;
     }
 };
 

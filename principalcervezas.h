@@ -2,6 +2,7 @@
 #define PRINCIPALCERVEZAS_H
 
 #include <QDialog>
+#include "Grafo.h"
 
 namespace Ui {
 class principalCervezas;
@@ -15,6 +16,8 @@ public:
     explicit principalCervezas(QWidget *parent = 0);
     ~principalCervezas();
 
+    Grafo getGrafo();
+
 private slots:
     void on_btn_registroFamilia_clicked();
 
@@ -26,6 +29,7 @@ private slots:
 
 private:
     Ui::principalCervezas *ui;
+    Grafo grafoCervezas;
 };
 
 #endif // PRINCIPALCERVEZAS_H

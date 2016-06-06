@@ -12,3 +12,7 @@ RegistroCerveza::~RegistroCerveza()
 {
     delete ui;
 }
+
+void RegistroCerveza::setGrafo(Grafo *pGrafo){
+    grafoCervezas = pGrafo;
+}

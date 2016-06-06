@@ -357,10 +357,6 @@ void matrizAerolinea::on_btn_agregarCiudad_clicked()
     //Poner ciudad en header
     ui->tableWidget->setHorizontalHeaderItem(ui->tableWidget->columnCount() - 1,  new QTableWidgetItem(nombreCiudad));
     ui->tableWidget->setVerticalHeaderItem(ui->tableWidget->rowCount() - 1, new QTableWidgetItem(nombreCiudad) );
-
-    //Poner ciudad en casilla de la matriz (Por si acaso)
-    //ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1  , 0 , new QTableWidgetItem(nombreCiudad)); //Agregar elementos a la ultima fila, columa 0 será para el nombre
-    //ui->tableWidget->setItem(0 , ui->tableWidget->columnCount() - 1  , new QTableWidgetItem(nombreCiudad));
 }
 
 void matrizAerolinea::on_tableWidget_itemChanged(QTableWidgetItem *item)

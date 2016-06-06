@@ -15,8 +15,35 @@ public:
     }
 
     void agregarVertice(string pNombre){
-        vertices.append(Vertice(pNombre));
-        size++;
+        int tam = vertices.getSize();
+        bool flag = false;
+        for(int i = 0; i < tam; i++){
+            if(vertices.getElement().getNombre() == pNombre){
+                cout << "Ya existe este vertice" << endl;
+                flag = true;
+                break;
+            }
+        }
+        if(!flag){
+            vertices.append(Vertice(pNombre));
+            size++;
+        }
+    }
+
+    void agregarVertice(string pNombre, int pTipo){
+        int tam = vertices.getSize();
+        bool flag = false;
+        for(int i = 0; i < tam; i++){
+            if(vertices.getElement().getNombre() == pNombre){
+                cout << "Ya existe este vertice" << endl;
+                flag = true;
+                break;
+            }
+        }
+        if(!flag){
+            vertices.append(Vertice(pNombre, pTipo));
+            size++;
+        }
     }
 
     float getPeso(string inicio, string destino){

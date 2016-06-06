@@ -34,7 +34,17 @@ void RegistroCerveza::on_btn_guardarCerveza_clicked()
     QString estilo = ui->comboBox_2->currentText();
     string origen = estilo.toLocal8Bit().constData();
 
-    grafoCervezas->agregarVertice(destino, 3); //2 por ser tipo Cerveza
+    string datos[7];
+
+    datos[0] = ui->descripcion->toPlainText().toLocal8Bit().constData();
+    datos[1] = ui->tipo->text().toLocal8Bit().constData();
+    datos[2] = ui->tiempo->text().toLocal8Bit().constData();
+    datos[3] = ui->temperatura->text().toLocal8Bit().constData();
+    datos[4] = ui->color->text().toLocal8Bit().constData();
+    datos[5] = ui->cuerpo->text().toLocal8Bit().constData();
+    datos[6] = ui->precio->text().toLocal8Bit().constData();
+
+    grafoCervezas->agregarVertice(destino, 3, datos); //3 por ser tipo Cerveza
     grafoCervezas->agregarArista(origen, destino, 0);
     grafoCervezas->mostrarGrafo();
 

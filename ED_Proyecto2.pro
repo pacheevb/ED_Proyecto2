@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     buscarcerveza.cpp \
     matrizaerolinea.cpp \
     resultadoruta.cpp \
-    agregarciudad.cpp
+    agregarciudad.cpp \
+    mostrarcerveza.cpp
 
 HEADERS  += mainwindow.h \
     registrocerveza.h \
@@ -36,7 +37,8 @@ HEADERS  += mainwindow.h \
     Grafo.h \
     LinkedList.h \
     Node.h \
-    Vertice.h
+    Vertice.h \
+    mostrarcerveza.h
 
 FORMS    += mainwindow.ui \
     registrocerveza.ui \
@@ -46,7 +48,8 @@ FORMS    += mainwindow.ui \
     buscarcerveza.ui \
     matrizaerolinea.ui \
     resultadoruta.ui \
-    agregarciudad.ui
+    agregarciudad.ui \
+    mostrarcerveza.ui
 
 RESOURCES += \
     recursos.qrc

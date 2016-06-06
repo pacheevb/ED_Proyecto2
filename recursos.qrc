@@ -22,5 +22,8 @@
         <file>Recursos/btn_agregarCiudad.png</file>
         <file>Recursos/lb_agregarCiudad.png</file>
         <file>Recursos/lb_resultado.png</file>
+        <file>Recursos/btn_borrar.png</file>
+        <file>Recursos/btn_buscar.png</file>
+        <file>Recursos/lb_mostrarCerveza.png</file>
     </qresource>
 </RCC>

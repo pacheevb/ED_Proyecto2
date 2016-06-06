@@ -8,6 +8,7 @@ private:
     string nombre;
     LinkedList<Arista> *aristas = new LinkedList<Arista>();
     int tipo;
+    string datosCerveza[7];
 
 public:
     Vertice(){}
@@ -20,6 +21,13 @@ public:
         tipo = pTipo;
     }
 
+    Vertice(string pNombre, int pTipo, string pDatos[7]){
+        nombre = pNombre;
+        tipo = pTipo;
+        for(int i = 0; i < 7; i++){
+            datosCerveza[i] = pDatos[i];
+        }
+    }
 
     string getNombre(){
         return nombre;

@@ -46,6 +46,22 @@ public:
         }
     }
 
+    void agregarVertice(string pNombre, int pTipo, string pDatos[7]){
+        int tam = vertices.getSize();
+        bool flag = false;
+        for(int i = 0; i < tam; i++){
+            if(vertices.getElement().getNombre() == pNombre){
+                cout << "Ya existe este vertice" << endl;
+                flag = true;
+                break;
+            }
+        }
+        if(!flag){
+            vertices.append(Vertice(pNombre, pTipo, pDatos));
+            size++;
+        }
+    }
+
     float getPeso(string inicio, string destino){
         if (existe(inicio) && existe(destino)){
             float**matriz = crearMatriz();

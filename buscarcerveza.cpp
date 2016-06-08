@@ -47,12 +47,37 @@ void buscarCerveza::on_btn_buscar_clicked()
     ui->listWidget->clear();
     string str = ui->comboBox_2->currentText().toLocal8Bit().constData();
     Vertice aux = grafoCervezas->getVertice(grafoCervezas->getPos(str));
+    string cuerpo = ui->cuerpo->text().toLocal8Bit().constData();
+    string tiempo = ui->tiempo->text().toLocal8Bit().constData();
+    string tipo = ui->tipo->text().toLocal8Bit().constData();
+    string color = ui->color->text().toLocal8Bit().constData();
 
     for(int i = 0; i < aux.getAristas()->getSize(); i++){
         aux.getAristas()->goToPos(i);
         string strI = aux.getAristas()->getElement().getDestino();
-        QString str = QString::fromLocal8Bit(strI.c_str());
-        ui->listWidget->addItem(str);
+        Vertice aux_2 = grafoCervezas->getVertice(grafoCervezas->getPos(strI));
+        if((cuerpo == aux_2.getDatos()[5] || cuerpo == "") &&
+                (tipo == aux_2.getDatos()[1] || tipo == "") &&
+                (color == aux_2.getDatos()[4] || color == "") &&
+                (tiempo == aux_2.getDatos()[2] || tiempo == "")){
+            QString str = QString::fromLocal8Bit(strI.c_str());
+            ui->listWidget->addItem(str);
+        }
+    }
+}
+
+void buscarCerveza::on_listar_clicked()
+{
+    ui->listWidget->clear();
+    if(grafoCervezas->getSize() > 0){
+        for(int i = 0; i < grafoCervezas->getSize(); i++){
+            Vertice aux = grafoCervezas->getVertice(i);
+            if(aux.getTipo() == 3){
+                string strI = aux.getNombre();
+                QString str = QString::fromLocal8Bit(strI.c_str());
+                ui->listWidget->addItem(str);
+            }
+        }
     }
 }
 

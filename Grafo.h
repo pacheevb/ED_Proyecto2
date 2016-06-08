@@ -267,6 +267,118 @@ public:
         return matriz;
     }
 
+    float** Prim(string verticeInicio){
+            float** matriz = crearMatriz();
+            int largo = vertices.getSize();
+            int visitados[20];
+            int inicio = getPos(verticeInicio);
+            int destino;
+            //asignar infinito para que algoritmo sirva
+            for (int i = 0; i < largo; i++){
+                for (int j = 0; j < largo; j++){
+                    if (matriz[i][j] == 0){
+                        matriz[i][j] = 9999;
+                    }
+                }
+            }
+            //limpiar visitados
+            for (int i = 0; i < largo; i++){
+                visitados[i] = 0;
+            }
+
+            visitados[inicio] = 1;
+            float total = 0;
+            int pos = 0;
+            while (pos < largo - 1){
+                float minimo = 9999;
+                for (int fila = 0; fila < largo; fila++){
+                    if (visitados[fila] == 1){
+                        for (int columna = 0; columna < largo; columna++){
+                            if (visitados[columna] != 1){
+                                if (minimo > matriz[fila][columna]){
+                                    minimo = matriz[fila][columna];
+                                    inicio = fila;
+                                    destino = columna;
+                                }
+                            }
+                        }
+                    }
+                }
+                visitados[destino] = 1;
+                matriz[inicio][destino] = minimo;
+                total = total + minimo;
+                pos++;
+            }
+            return matriz;
+        }
+
+        float** tablaPrim(){
+            float** matriz = crearMatriz();
+            for (int i = 0; i < vertices.getSize(); i++){
+                vertices.goToPos(i);
+                string ciudad = vertices.getElement().getNombre();
+                matriz = Prim(ciudad);
+            }
+            cout << "Tabla prim" << endl;
+            for (int i = 0; i < size; i++){
+                for (int j = 0; j < size; j++){
+                    cout << "|" << matriz[i][j];
+                }
+                cout << "|" << endl;
+            }
+            return matriz;
+        }
+
+        void kruskal(){
+            cout << "Kruskal" << endl;
+            int largo = vertices.getSize();
+            float padre[largo];
+            float** matriz = crearMatriz();
+            int minimo;
+            int u = 0;
+            int v = 0;
+            int cantAristas = 1;
+            float total = 0;
+
+            for (int i = 0; i < largo; i++){
+                padre[i] = 0;
+                for (int j = 0; j < largo; j++){
+                    if (matriz[i][j] == 0){
+                        matriz[i][j] = 9999;
+                    }
+                }
+            }
+
+            while (cantAristas < largo){
+                minimo = 9999;
+                for (int i = 0; i < largo; i++){
+                    for (int j = 0; j < largo; j++){
+                        if (matriz[i][j] <= minimo){
+                            minimo = matriz[i][j];
+                            u = i;
+                            v = j;
+                        }
+                    }
+                }
+                while (padre[u] != 0){
+                    u = padre[u];
+                }
+
+                while (padre[v] != 0){
+                    v = padre[v];
+                }
+
+                if (v != u){
+                    cout << "Arista desde: " << u << " -> " << v << " min: " << minimo << endl;
+                    total += minimo;
+                    cantAristas++;
+                    padre[v] = u;
+                }
+                matriz[u][v] = 9999;
+            }
+            cout << "Costo total: " << total << endl;
+        }
+
     void mostrarGrafo(){
         vertices.goToStart();
         for(int i = 0; i < size; i++){

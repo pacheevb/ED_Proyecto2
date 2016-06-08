@@ -29,6 +29,8 @@ private slots:
 
     void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
 
+    void on_listar_clicked();
+
 private:
     Ui::buscarCerveza *ui;
     Grafo *grafoCervezas;

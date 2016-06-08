@@ -27,6 +27,8 @@ private slots:
 
     void on_btn_registroEstilo_clicked();
 
+    void on_btn_borrarFamilia_clicked();
+
 private:
     Ui::principalCervezas *ui;
     Grafo grafoCervezas;

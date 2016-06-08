@@ -1,5 +1,6 @@
 #include "registroestilo.h"
 #include "ui_registroestilo.h"
+#include <QMessageBox>
 
 registroEstilo::registroEstilo(QWidget *parent) :
     QDialog(parent),
@@ -34,8 +35,12 @@ void registroEstilo::on_btn_guardarEstilo_clicked()
     QString familia = ui->comboBox->currentText();
     string origen = familia.toLocal8Bit().constData();
 
-    grafoCervezas->agregarVertice(destino, 2); //2 por ser tipo Estilo
-    grafoCervezas->agregarArista(origen, destino, 0);
-    grafoCervezas->mostrarGrafo();
-    this->close();
+    if(familia == ""){
+        QMessageBox::information(this, "Error", "Primero debe ingresar una familia");
+    } else {
+        grafoCervezas->agregarVertice(destino, 2); //2 por ser tipo Estilo
+        grafoCervezas->agregarArista(origen, destino, 0);
+        grafoCervezas->mostrarGrafo();
+        this->close();
+    }
 }

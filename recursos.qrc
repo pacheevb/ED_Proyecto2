@@ -27,5 +27,7 @@
         <file>Recursos/lb_mostrarCerveza.png</file>
         <file>Recursos/btn_borrarEstilo.png</file>
         <file>Recursos/btn_borrarFam.png</file>
+        <file>Recursos/lb_borrarEstilo.png</file>
+        <file>Recursos/lb_borrarFamilia.png</file>
     </qresource>
 </RCC>

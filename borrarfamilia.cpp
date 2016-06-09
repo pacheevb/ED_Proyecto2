@@ -30,5 +30,6 @@ void borrarFamilia::on_btn_borrarFamilia_clicked()
         QMessageBox::information(this, "Cervecería", "No se puede eliminar familias con estilos, primero borre los estilos!");
     } else {
         grafoCervezas->borrarVertice(porBorrar);
+        this->close();
     }
 }

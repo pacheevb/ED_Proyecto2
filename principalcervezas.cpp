@@ -13,9 +13,11 @@ principalCervezas::principalCervezas(QWidget *parent) :
     ui(new Ui::principalCervezas)
 {
     ui->setupUi(this);
-/*
+
     grafoCervezas.agregarVertice("Ale", 1);
+    grafoCervezas.agregarVertice("Lagger", 1);
     grafoCervezas.agregarVertice("Britanica", 2);
+    grafoCervezas.agregarVertice("Alemana", 2);
     string cer1[7] = {"Tica", "Alta", "30", "25", "Roja", "Baja", "300"};
     string cer2[7] = {"Inglesa", "Alta", "20", "15", "Verde", "Fuerte", "200"};
     string cer3[7] = {"Alemana", "Baja", "20", "35", "Azul", "Fuerte", "400"};
@@ -24,9 +26,10 @@ principalCervezas::principalCervezas(QWidget *parent) :
     grafoCervezas.agregarVertice("Bavaria", 3, cer3);
 
     grafoCervezas.agregarArista("Ale", "Britanica", 0);
+    grafoCervezas.agregarArista("Lagger", "Alemana", 0);
     grafoCervezas.agregarArista("Britanica", "Imperial", 0);
     grafoCervezas.agregarArista("Britanica", "Pilsen", 0);
-    grafoCervezas.agregarArista("Britanica", "Bavaria", 0);*/
+    grafoCervezas.agregarArista("Britanica", "Bavaria", 0);
 }
 
 principalCervezas::~principalCervezas()
@@ -81,4 +84,11 @@ void principalCervezas::on_btn_borrarFamilia_clicked()
     borrarFamilia bF(&grafoCervezas);
     bF.setModal(true);
     bF.exec();
+}
+
+void principalCervezas::on_btn_borrarEstilo_clicked()
+{
+    borrarEstilo bE(&grafoCervezas);
+    bE.setModal(true);
+    bE.exec();
 }

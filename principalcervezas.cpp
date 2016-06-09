@@ -4,6 +4,8 @@
 #include "registrocerveza.h"
 #include "registroestilo.h"
 #include "buscarcerveza.h"
+#include "borrarestilo.h"
+#include "borrarfamilia.h"
 
 
 principalCervezas::principalCervezas(QWidget *parent) :
@@ -76,4 +78,7 @@ Grafo principalCervezas::getGrafo(){
 
 void principalCervezas::on_btn_borrarFamilia_clicked()
 {
+    borrarFamilia bF(&grafoCervezas);
+    bF.setModal(true);
+    bF.exec();
 }
